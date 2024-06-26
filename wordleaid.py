@@ -91,7 +91,6 @@ while True:
             break  
         if grey == "exit":
             sys.exit()
-        # TO DO: don't add letter to greylist if in yellowlist or greenlist
         
         greylist.append(grey)
     print(greylist)
@@ -130,23 +129,18 @@ while True:
                     else:
                         ya[guess][solution][i] = 'grey'
 
-    # “on average, more and smaller groups means faster solving”
-
     # combine colors for each solution into single strings so they are more easily compared
     for z in ya:
         for wordcolors in ya[z]:
-            # print(wordcolors, ya[z][wordcolors])
             joinlist = ''.join(ya[z][wordcolors])
             ya[z][wordcolors] = joinlist
 
     # compare strings of colors, count and track number of unique strings of colors 
-
     solutiondict = {}
     for z in ya: 
         countsum = 0
         colorcounts = {}
 
-        # print(z, ya[z]) 
         for aa in ya[z]:
             colorcounts[ya[z][aa]] = colorcounts.get(ya[z][aa], 0) + 1
 
@@ -154,20 +148,14 @@ while True:
         floatlength = float(len(colorcounts))
 
         for ya[z][aa], count in colorcounts.items():
-            # print(ya[z][aa], count)
             countsum = countsum + float(count)
             averagegroups = (countsum/floatlength) # average of counts, represents average size of groups
             solutiondict[z] = averagegroups
             
-
-        # print number of unique counts, represents number of groups
-        # print(len(colorcounts))
         colorcounts.clear()
         
     if len(l3) < 2:
         sys.exit()
-
-    # I will have to figure out what to do if one guess somehow has say a bigger average in groups and more groups (is this even possible mathematically?). I will need to study the NYT WordleBot a bit more
 
     # print the recommended guesses, in other words, the guesses that produced smallest average group size
     min_value = min(solutiondict.values())
@@ -178,10 +166,6 @@ while True:
         print("Recommended next guesses:", rlist)
     else:
         print("Recommended next guesses:", slist)
-
-    # I suppose there could be a case where one guess on average had smaller group size, but had one very large group, for example, which would do a worse job of guarenteeing solving the puzzle quickly. Should I be calculating and recording largest group size as well? In addition, should I be going at least one extra layer deep for calculating efficiency to solving? Or should I even be going all the way with each line? 
-
-    # should turn this part of the program into a function I call perhaps 
     
     # prepare for next Wordle entry
     counts.clear()
