@@ -1,4 +1,4 @@
-# WordleAid AI
+# WordleAid
 
 This program assists in solving the NYT game Wordle in as few guesses as possible. 
 
