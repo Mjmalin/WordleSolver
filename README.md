@@ -1,4 +1,4 @@
-# WordleAid
+# WordleSolver
 
 This program assists in solving the NYT game Wordle in as few guesses as possible. 
 
@@ -10,3 +10,9 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the req
 
 ```bash
 pip install -r requirements.txt
+
+## How it works
+
+
+
+
