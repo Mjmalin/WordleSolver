@@ -2,7 +2,7 @@
 
 This program assists in solving the NYT game Wordle in as few guesses as possible. 
 
-![image](./WordleAid_example_pic.png)
+![image](./Screen Shot 2024-07-17 at 4.38.35 PM.png)
 
 ## Installation
 
