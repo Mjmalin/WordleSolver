@@ -3,8 +3,7 @@
 This program assists in solving the NYT game Wordle in as few guesses as possible. 
 
 ![image](./WordleSolverPic1)
-_Wordle from 6/17/24
-_
+*Wordle from 6/17/24*
 
 ## Installation
 
@@ -19,7 +18,7 @@ pip install -r requirements.txt
 When playing Wordle, start by entering your own first guess into the game. 
 
 ![image](./Wordlepic5.png)
-Wordle from 6/18/24
+*Wordle from 6/18/24*
 
 When you start the program, it begins by prompting you to enter a green letter. In this above example, there are no green letters, so you would press enter, as it instructs.
 
