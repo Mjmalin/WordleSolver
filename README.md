@@ -25,11 +25,13 @@ When you start the program, it begins by prompting you to enter a green letter. 
 
 Next, the program prompts for yellow letters. In this case, there are 3-- we will start with 'r'. Now the program prompts for the position. Since the 'r' is in the 2nd position out of 5, you enter '2.'
 
+
 ![image](./Wordlepic3.png)
 
 After you finish entering the yellow letters, then the grey letters, the program will give you a few pieces of information. It will display the "Remaining possible solutions," and most importantly, "Recommended next best guess(es)." 
 
 ![image](./Wordlepic4.png)
+
 
 In this case, the program recommends "siren," so that is what we will guess next. It also gives a metric called "Smallest average group size," which will be explained in more detail in the "How the program works" section of this README file. 
 
