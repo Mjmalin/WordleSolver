@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 When playing Wordle, start by entering your own first guess into the game. 
 
-![image](./WordlePic2.png)
+![image](./WordlePic5.png)
 Wordle from 6/18/24
 
 When you start the program, it begins by prompting you to enter a green letter. In this above example, there are no green letters, so you would press enter, as it instructs.
