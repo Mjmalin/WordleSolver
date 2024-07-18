@@ -27,7 +27,7 @@ Next, the program prompts for yellow letters. In this case, there are 3-- we wil
 
 ![image](./Wordlepic3.png)
 
-After you finish entering the yellow letters, then the grey letters, the program will give you a few pieces of information. It will give you the "Remaining possible solutions," and most importantly, "Recommended next best guess(es)." 
+After you finish entering the yellow letters, then the grey letters, the program will give you a few pieces of information. It will display the "Remaining possible solutions," and most importantly, "Recommended next best guess(es)." 
 
 ![image](./Wordlepic4.png)
 
