@@ -1,6 +1,6 @@
 # WordleSolver
 
-This program assists in solving the NYT game Wordle in as few guesses as possible. 
+This program solves the NYT game Wordle. 
 
 ![image](./WordleSolverPic1)
 *Wordle from 6/17/24*
