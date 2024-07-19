@@ -38,11 +38,11 @@ In this case, the program recommends "siren," so that is what we will guess next
 
 After entering the corresponding greens, yellows, and greys from the guess "siren," the program presents one remaining word and then terminates.
 
-![image](./Wordlepic7.png)
+![image](./Wordlepic8.png)
 
 This means "nerdy" is the answer.
 
-![image](./Wordlepic8.png)
+![image](./Wordlepic7.png)
 
 
 
