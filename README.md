@@ -50,4 +50,20 @@ This means "nerdy" is the answer.
 
 ## How the program works
 
+The program begins by importing a list of all possible Wordle answers from a github repository, as well as using BeautifulSoup and regular expressions to import and parse a list of all past Wordle answers from a website. 
+
+
+It then uses list comprehension to subtract all past answers from all possible answers, since Wordle doesn't repeat answers (the program theoretically might need to be updated once all answers have been used). 
+
+The program continues to use list comprehension to subtract all impossible answers based on green, yellow, and grey letters. 
+
+
+Next, the program needs to store all 
+
+
+
+
+
+
+
 
