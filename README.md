@@ -34,7 +34,7 @@ After you finish entering the yellow letters, then the grey letters, the program
 
 In this case, the program recommends "siren," so that is what we will guess next. It also gives a metric called "Smallest average group size," which will be explained in more detail in the "How the program works" section of this README file. 
 
-
+![image](./Wordlepic6.png)
 
 
 
