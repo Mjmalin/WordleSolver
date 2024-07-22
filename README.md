@@ -59,7 +59,7 @@ After inputting "parse," the program evaluates 6 different, equally good guesses
 
 The program would solve on the next guess if you chose "light". Since the "average group size" was >1, it was not guaranteed to get the answer on the third guess, however (again, more on this soon).
 
-![image](./wordlepic11.png)
+![image](./wordlepic14.png)
 *Wordle from 7/22/24*
 
 ## How the program works
