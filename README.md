@@ -54,7 +54,7 @@ Using this strategy, on this particular day, the program recommends "parse" as t
 
 ![image](./wordlepic10.png)
 
-After inputting "parse," the program evaluates 6 different, equally good guesses, so you can choose one at random.
+After inputting "parse," the program evaluates 6 different, equally good guesses, so you can choose one arbitrarily.
 
 
 ![image](./wordlepic13.png)
