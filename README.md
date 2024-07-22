@@ -54,6 +54,7 @@ Using this strategy, on this particular Wordle game (this can potentially change
 
 After inputting "parse," the program evaluates 6 different, equally good guesses, so you can choose one at random.
 
+
 ![image](./wordlepic12.png)
 
 The program would get the answer on the next guess if you chose "light". Since the "average group size" was >1, the prorgram was not guaranteed to get the answer on the third guess, however (again, more on this later).
