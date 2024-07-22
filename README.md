@@ -56,7 +56,7 @@ After inputting "parse," the program evaluates 6 different, equally good guesses
 
 ![image](./wordlepic12.png)
 
-Here is the full solve.
+Here is an example of a full solve.
 
 ![image](./wordlepic11.png)
 *Wordle from 7/22/24*
