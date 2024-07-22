@@ -44,6 +44,10 @@ This means "nerdy" is the answer.
 
 ![image](./Wordlepic7.png)
 
+If you want the program to recommend the best first guess, you can press "enter" for green, yellow, and grey with 0 entries. 
+
+Using this strategy, on this particular Wordle game (this can potentially day to day), the program recommendeds "parse."
+
 
 
 
