@@ -3,7 +3,7 @@
 This program solves the NYT game Wordle. 
 
 ![image](./WordleSolverPic1)
-*Wordle from 6/17/24*
+*Wordle from 7/17/24*
 
 ## Installation
 
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 When playing Wordle, start by entering your own first guess into the game. 
 
 ![image](./Wordlepic5.png)
-*Wordle from 6/18/24*
+*Wordle from 7/18/24*
 
 When you start the program, it begins by prompting you to enter a green letter. In this above example, there are no green letters, so you would press enter, as it instructs.
 
@@ -46,11 +46,14 @@ This means "nerdy" is the answer.
 
 If you want the program to recommend the best first guess, you can press "enter" for green, yellow, and grey with 0 entries. 
 
+![image](./wordlepic9.png)
+
 Using this strategy, on this particular Wordle game (this can potentially day to day), the program recommendeds "parse."
 
+![image](./wordlepic10.png)
 
-
-
+![image](./wordlepic11.png)
+*Wordle from 7/22/24
 
 ## How the program works
 
