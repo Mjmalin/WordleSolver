@@ -50,7 +50,7 @@ In another example, if you want the program to recommend the best first guess, y
 
 ![image](./wordlepic9.png)
 
-Using this strategy, on this particular Wordle game (this can potentially change from day to day), the program recommends "parse."
+Using this strategy, on this particular day, the program recommends "parse" as the best first guess (this can potentially change from day to day).
 
 ![image](./wordlepic10.png)
 
