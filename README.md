@@ -52,8 +52,14 @@ Using this strategy, on this particular Wordle game (this can potentially change
 
 ![image](./wordlepic10.png)
 
+After inputting "parse," the program evaluates 6 different, equally good guesses, so you can choose one at random.
+
+![image](./wordlepic12.png)
+
+Here is the full solve.
+
 ![image](./wordlepic11.png)
-*Wordle from 7/22/24
+*Wordle from 7/22/24*
 
 ## How the program works
 
