@@ -18,7 +18,6 @@ pip install -r requirements.txt
 When playing Wordle, start by entering your own first guess into the game. 
 
 ![image](./Wordlepic5.png)
-*Wordle from 7/18/24*
 
 When you start the program, it begins by prompting you to enter a green letter. In this above example, there are no green letters, so you would press enter, as it instructs.
 
@@ -43,8 +42,7 @@ After entering the corresponding greens, yellows, and greys from the guess "sire
 This means "nerdy" is the answer.
 
 ![image](./Wordlepic7.png)
-
-
+*Wordle from 7/18/24*
 
 In another example, if you want the program to recommend the best first guess, you can press "enter" for green, yellow, and grey with 0 entries. 
 
