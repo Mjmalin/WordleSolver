@@ -56,7 +56,7 @@ After inputting "parse," the program evaluates 6 different, equally good guesses
 
 ![image](./wordlepic12.png)
 
-Here is an example of a full solve.
+The program would get the answer on the next guess if you chose "light". Since the "average group size" was >1, the prorgram was not guaranteed to get the answer on the third guess, however (again, more on this later).
 
 ![image](./wordlepic11.png)
 *Wordle from 7/22/24*
