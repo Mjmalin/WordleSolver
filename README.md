@@ -46,7 +46,7 @@ This means "nerdy" is the answer.
 
 
 
-In a third and final example, if you want the program to recommend the best first guess, you can press "enter" for green, yellow, and grey with 0 entries. 
+In another example, if you want the program to recommend the best first guess, you can press "enter" for green, yellow, and grey with 0 entries. 
 
 ![image](./wordlepic9.png)
 
