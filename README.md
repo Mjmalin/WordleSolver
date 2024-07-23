@@ -68,11 +68,11 @@ The program needs to start with a list of all valid Wordle solutions. It begins 
 
 ![image](./wordlepic15.png)
 
-It then uses list comprehension to subtract all past solutions from all possible solutions, since Wordle never repeats solutions (the program theoretically might need to be updated once all have been used). 
+It then uses list comprehension to subtract all past solutions from all possible solutions, since Wordle never repeats (the program theoretically might need to be updated once all have been used). 
 
 ![image](./wordlepic16.png)
 
-The program continues to use list comprehension to subtract all impossible solutions based on green, yellow, and grey letters. 
+The program continues to use list comprehension to subtract all impossible solutions based on green, yellow, and grey letters, continuing to prompt the user to enter letters until there is only one solution left. 
 
 ![image](./wordlepic17.png)
 
