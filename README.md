@@ -74,7 +74,7 @@ It then uses list comprehension to subtract all past solutions from all possible
 
 The program continues to use list comprehension to subtract all impossible solutions based on green, yellow, and grey letters, continuing to prompt the user to enter letters until there is only one solution left. 
 
-![image](./wordlepic17.png)
+![image](./wordlepic18.png)
 
 Next, the program needs to 
 
