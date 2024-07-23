@@ -66,11 +66,15 @@ The program would solve on the next guess if you chose "light". Since the "avera
 
 The program begins by importing a list of all possible Wordle answers from a github repository, as well as using BeautifulSoup and regular expressions to import and parse a list of all past Wordle answers from a website. 
 
+![image](./wordlepic15.png)
 
 It then uses list comprehension to subtract all past answers from all possible answers, since Wordle doesn't repeat answers (the program theoretically might need to be updated once all answers have been used). 
 
+![image](./wordlepic16.png)
+
 The program continues to use list comprehension to subtract all impossible answers based on green, yellow, and grey letters. 
 
+![image](./wordlepic17.png)
 
 Next, the program needs to store all 
 
