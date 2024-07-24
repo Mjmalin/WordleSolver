@@ -76,7 +76,10 @@ The program continues to use list comprehension to subtract all impossible solut
 
 ![image](./wordlepic18.png)
 
-Next, the program needs to 
+Next, the program needs to recommend guesses. To do this, it must first compare every possible guess to every possible solution, and store the theoretical greys, yellows, and greens that each pairing would produce. It is important to check every possible guess, since very often the best guess is not a possible solution.
+
+![image](./wordlepic19.png)
+
 
 
 
