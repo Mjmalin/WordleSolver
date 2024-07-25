@@ -96,14 +96,14 @@ In this example, after our first guess "parse," there are only 6 remaining possi
 
 ![image](./wordlepic24.png)
 
-Just below that, we can see that there are a bunch of potential guesses that will produce an average grouo size of 1, so we just choose one at random-- and we are guaranteed to solve Wordle in 3. 
+Just below that, we can see that there are a bunch of potential guesses that will produce an average group size of 1, so we just choose one at random-- and we are guaranteed to solve Wordle in 3. 
 
 ![image](./wordlepic25.png)
 
 ![image](./wordlepic26.png)
 *Wordle from 7/24/24*
 
-Here is the code that prints the all the guesses with the smallest average group size. The program prioritizes recommending guesses that could be possible solutions, but not at the expense of failing to recommend guesses with smallest average group size. You'll notice in the previous example, even though there were only 6 remaining solutions, none of the recommended words were one of those possible solutions.  
+Here is the code that prints all the guesses with the smallest average group size. The program prioritizes recommending guesses that could be possible solutions, but not at the expense of recommending guesses with smallest average group size. You'll notice in the previous example, even though there were only 6 remaining solutions, none of the recommended words were one of those possible solutions.  
 
 ![image](./wordlepic27.png)
 
