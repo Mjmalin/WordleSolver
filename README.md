@@ -84,9 +84,31 @@ For every guess, the program must now sort the grey, yellow, greens of those sol
 
 ![image](./wordlepic21.png)
 
-The 
+The program now calculates the average size of those groups of unique strings of colors. 
 
 ![image](./wordlepic22.png)
+
+We calculate average group size for every guess because the smaller the average size of groups for a guess, the faster Wordle can generally be solved with that particular guess. The most extreme example is an average group size of 1. If all groups (unique strings of colors) have only one possible solution, that means your next guess guarantees solving Wordle on the following guess. 
+
+In this example, after our first guess "parse," there are only 6 remaining possible solutions.
+
+]![image](./wordlepic23.png)
+
+![image](./wordlepic24.png)
+
+Just below that, we can see that there are a bunch of potential guesses that will produce an average grouo size of 1, so we just choose one at random-- and we are guaranteed to solve Wordle in 3. 
+
+![image](./wordlepic25.png)
+
+![image](./wordlepic26.png)
+*Wordle from 7/24/24*
+
+
+
+
+
+
+
 
 
 
