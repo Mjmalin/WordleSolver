@@ -103,6 +103,11 @@ Just below that, we can see that there are a bunch of potential guesses that wil
 ![image](./wordlepic26.png)
 *Wordle from 7/24/24*
 
+Here is the code that prints the all the guesses with the smallest average group size. The program prioritizes recommending guesses that could be possible solutions, but not at the expense of failing to recommend guesses with smallest average group size. You'll notice in the previous example, even though there were only 6 remaining solutions, none of the recommended words were one of those possible solutions.  
+
+![image](./wordlepic27.png)
+
+
 
 
 
