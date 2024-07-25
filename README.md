@@ -68,7 +68,7 @@ The program needs to start with a list of all valid Wordle solutions. It begins 
 
 ![image](./wordlepic15.png)
 
-It then uses list comprehension to subtract all past solutions from all possible solutions, since Wordle never repeats (the program theoretically might need to be updated once all have been used). 
+It then uses list comprehension to subtract all past solutions from all possible solutions, since Wordle never repeats solutions. 
 
 ![image](./wordlepic16.png)
 
@@ -84,11 +84,13 @@ For every guess, the program must now sort the grey, yellow, greens of those sol
 
 ![image](./wordlepic21.png)
 
-The program now calculates the average size of those groups of unique strings of colors. 
+The program now calculates the average size of those groups of unique strings of colors. The smaller the average size of groups for a guess, the faster Wordle can generally be solved with that particular guess. The most extreme example is an average group size of 1. If all groups (unique strings of colors) have only one possible solution, that means your next guess guarantees solving Wordle on the following guess. 
 
 ![image](./wordlepic22.png)
 
-We calculate average group size for every guess because the smaller the average size of groups for a guess, the faster Wordle can generally be solved with that particular guess. The most extreme example is an average group size of 1. If all groups (unique strings of colors) have only one possible solution, that means your next guess guarantees solving Wordle on the following guess. 
+Here is the code that prints all the guesses with the smallest average group size. The program prioritizes recommending guesses that could be possible solutions, but not at the expense of recommending guesses with smallest average group size. 
+
+![image](./wordlepic27.png)
 
 In this example, after our first guess "parse," there are only 6 remaining possible solutions.
 
@@ -96,16 +98,14 @@ In this example, after our first guess "parse," there are only 6 remaining possi
 
 ![image](./wordlepic24.png)
 
-Just below that, we can see that there are a bunch of potential guesses that will produce an average group size of 1, so we just choose one at random-- and we are guaranteed to solve Wordle in 3. 
+Just below that, we can see that there are a bunch of potential guesses that will produce an average group size of 1, so we just choose one at random-- and we are guaranteed to solve Wordle in 3.
 
 ![image](./wordlepic25.png)
 
 ![image](./wordlepic26.png)
 *Wordle from 7/24/24*
 
-Here is the code that prints all the guesses with the smallest average group size. The program prioritizes recommending guesses that could be possible solutions, but not at the expense of recommending guesses with smallest average group size. You'll notice in the previous example, even though there were only 6 remaining solutions, none of the recommended words were one of those possible solutions.  
 
-![image](./wordlepic27.png)
 
 
 
