@@ -92,7 +92,7 @@ We calculate average group size for every guess because the smaller the average 
 
 In this example, after our first guess "parse," there are only 6 remaining possible solutions.
 
-]![image](./wordlepic23.png)
+![image](./wordlepic23.png)
 
 ![image](./wordlepic24.png)
 
