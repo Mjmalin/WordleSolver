@@ -80,7 +80,7 @@ Next, the program needs to recommend guesses. To do this, it must first compare 
 
 ![image](./wordlepic20.png)
 
-For every guess, the program must now sort the grey, yellow, greens of those solutions into "groups." For instance, if only two solutions for the same guess produce grey grey yellow grey grey, the program tracks that unique string of colors and stores the count "2."
+For every guess, the program must now sort the grey, yellow, greens of those solutions into "groups." For instance, if only 2 solutions for the same guess produce grey grey yellow grey grey, the program tracks that unique string of colors and stores the count "2."
 
 ![image](./wordlepic21.png)
 
