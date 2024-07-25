@@ -64,7 +64,7 @@ The program would solve on the next guess if you chose "light". Since the "avera
 
 ## How the program works
 
-The program needs to start with a list of all valid Wordle solutions. It begins by importing a list of all possible Wordle solutions from a github repository, as well as using BeautifulSoup and regular expressions to import and parse a list of all past Wordle solutions from a website. 
+The program needs to start with a list of all valid Wordle solutions. It begins by scraping a list of all possible Wordle solutions from a github repository, as well as using BeautifulSoup and regular expressions to import and parse a list of all past Wordle solutions from a website. 
 
 ![image](./wordlepic15.png)
 
@@ -76,7 +76,7 @@ The program continues to use list comprehension to subtract all impossible solut
 
 ![image](./wordlepic18.png)
 
-Next, the program needs to recommend guesses. To do this, it must first compare every possible guess to every possible solution, and store the theoretical greys, yellows, and greens that each pairing would produce. It is important to check every possible guess, since very often the best guess is not a possible solution.
+Next, the program needs to recommend guesses. To do this, it must first compare every possible guess to every possible solution, storing the theoretical greys, yellows, and greens that each guess/solution pairing would produce. It is important to check every possible guess, since very often the best guess is not a possible solution.
 
 ![image](./wordlepic20.png)
 
