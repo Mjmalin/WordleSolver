@@ -118,6 +118,3 @@ Here is the code that prints all the guesses with the smallest average group siz
 
 
 
-
-
-
