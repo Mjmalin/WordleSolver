@@ -26,7 +26,7 @@ Next, the program prompts for yellow letters. In this case, there are 3-- we wil
 
 ![image](./Wordlepic3.png)
 
-After you finish entering the yellow letters, then the grey letters (which don't require letter positions to be entered), the program will give you a few pieces of information. It will display the "Remaining possible solutions," and most importantly, "Recommended next best guess(es)." 
+After you finish entering the yellow letters, and then entering the grey letters (which don't require letter positions to be entered), the program will give you a few pieces of information. It will display the "Remaining possible solutions," and most importantly, "Recommended next best guess(es)." 
 
 ![image](./Wordlepic4.png)
 
@@ -72,7 +72,7 @@ It then uses list comprehension to subtract all past solutions from all possible
 
 ![image](./wordlepic16.png)
 
-The program continues to use list comprehension to subtract all impossible solutions based on green, yellow, and grey letters, continuing to prompt the user to enter letters until there is only one solution left. 
+The program uses list comprehension once again to subtract all impossible solutions based on green, yellow, and grey letters, continuing to prompt the user to enter letters until there is only one Wordle solution left. 
 
 ![image](./wordlepic18.png)
 
