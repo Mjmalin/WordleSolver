@@ -23,7 +23,7 @@ for lines in soup :
     for za in y :
         lst.append(za)
 
-# import all past Wordle answers
+# import all past Wordle answers, format them into lower case
 html = urllib.request.urlopen("https://www.rockpapershotgun.com/wordle-past-answers", context=ctx).read()
 sp = BeautifulSoup(html, 'html.parser')
 
@@ -33,96 +33,83 @@ c = [b.lower() for b in a]
 
 # subtract all past Wordle answers from all possible Wordle solutions
 l3 = [d for d in lst if d not in c]
-print(l3)
 
 # continue asking for Wordle entries unless there is one word left
 while True:
     if len(l3) < 2:
         sys.exit()
-        
-    # count letters and print amount of each
-    for remaining in l3:
-        for letters in remaining:
-            counts[letters] = counts.get(letters, 0) + 1
-    for letters, count in sorted(counts.items(), key=lambda k: k[1], reverse=True):
-        print(letters, count)
-        
+
     # ask for green letters
     while True:
-        green = input("Enter a green letter: ")
+        green = input("Enter a green letter (simply press return if none/no more): ")
         if green == "":
             break
-        if green == "exit":
-            sys.exit()
         greenlist.append(green)
-        print(greenlist)
 
     # ask for positions, subtract words with no green letters in that position
-        gpos = input("Enter position: ")
+        gpos = input("Enter position of letter (options are 1 - 5): ")
         gp = int(gpos)
         gpi = gp - 1
         l3 = [j for j in l3 if j[gpi] == green]
-    print(l3)
         
     # ask for yellow letters
     while True:
-        yellow = input("Enter a yellow letter: ")
+        yellow = input("Enter a yellow letter (simply press return if none/no more): ")
         if yellow == "":
             break
-        if yellow == "exit":
-            sys.exit()
         yellowlist.append(yellow)
-        print(yellowlist)
 
     # ask for positions, subtract words with yellow letters in that position
-        ypos = input("Enter position: ")
+        ypos = input("Enter position of letter (options are 1 - 5): ")
         yp = int(ypos)
         ypi = yp - 1
         l3 = [g for g in l3 if g[ypi] != yellow]
 
     # subtract words with none of the yellow letters 
     l3 = [h for h in l3 if all(i in h for i in yellowlist)]
-    print(l3)
     
-    # ask for grey letters, subtract all words with grey letters
+    # ask for grey letters, add them to greylist 
     while True:
-        grey = input("Enter a grey letter: ")
+        grey = input("Enter a grey letter (simply press return if none/no more): ")
         if grey == "":      
             break  
-        if grey == "exit":
-            sys.exit()
-        
         greylist.append(grey)
-    print(greylist)
+        
+    # subtract everything in yellowlist and greenlist from greylist, to deal with guesses like "PUPPY," that might produce a yellow P and two grey P's, for instance
+    greylist = [gg for gg in greylist if gg not in yellowlist]
+    greylist = [ii for ii in greylist if ii not in greenlist]
+                
+    # subtract all words with grey letters
     l3 = [e for e in l3 if all(f not in e for f in greylist)]
-    print(l3)
+    print("Remaining possible solutions:", l3)
 
-    # Dictionary that will hold solutions:(list of results) as key:value pairs
+    # dictionary that will hold solutions:list of results as key:value pairs
     ya = {}
 
+    # for all possible Wordle entries (potential guesses), create a dictionary
     for guess in lst:
         ya[guess] = {}
 
-        # Initialize a dictionary to keep track of the counts of each letter in the solution
+        # dictionary to keep track of the counts of each letter in the solution
         for solution in l3:
             solution_counts = {}
             for sletter in solution:
                 solution_counts[sletter] = solution_counts.get(sletter, 0) + 1
 
-            # Initialize lists to hold the results
+            # lists to hold the results
             ya[guess][solution] = []
 
-        # First pass: Identify greens and update solution counts
+        # first pass: identify greens and update solution counts
             for guess_letter, solution_letter in zip(guess, solution):
                 if guess_letter == solution_letter:
                     ya[guess][solution].append('green')
                     solution_counts[guess_letter] -= 1
                 else:
-                    ya[guess][solution].append(None)  # Placeholder for non-green matches
+                    ya[guess][solution].append(None)  # placeholder for non-green matches
 
-            # Second pass: Identify yellows and greys, respecting green matches
+            # second pass: identify yellows and greys, respecting green matches
             for i, guess_letter in enumerate(guess):
-                if ya[guess][solution][i] is None:  # Only process if not already marked as green
+                if ya[guess][solution][i] is None:  # only process if not already marked as green
                     if guess_letter in solution_counts and solution_counts[guess_letter] > 0:
                         ya[guess][solution][i] = 'yellow'
                         solution_counts[guess_letter] -= 1
@@ -144,7 +131,7 @@ while True:
         for aa in ya[z]:
             colorcounts[ya[z][aa]] = colorcounts.get(ya[z][aa], 0) + 1
 
-
+        # calculate the average size of groups of unique strings of colors    
         floatlength = float(len(colorcounts))
 
         for ya[z][aa], count in colorcounts.items():
@@ -158,16 +145,17 @@ while True:
         sys.exit()
 
     # print the recommended guesses, in other words, the guesses that produced smallest average group size
+    # min_value represents the smallest average group size
     min_value = min(solutiondict.values())
-    rlist = [ka for ka,va in solutiondict.items() if va == min_value]
-    slist = [xa for xa in rlist if xa in l3]
-    print(solutiondict)
+    rlist = [ka for ka,va in solutiondict.items() if va == min_value] # we use rlist if the best guess is not a possible solution
+    slist = [xa for xa in rlist if xa in l3] # we use slist if the best guess is a possible solution
+    # print(solutiondict)
     if not slist:
-        print("Recommended next guesses:", rlist)
+        print("Recommended next guess(es):", rlist, "Smallest average group size: ", min_value) 
     else:
-        print("Recommended next guesses:", slist)
+        print("Recommended next guess(es):", slist, "Smallest average group size: ", min_value)
     
-    # prepare for next Wordle entry
+    # prepare for next Wordle entry by clearing lists
     counts.clear()
     greenlist.clear()
     yellowlist.clear()
