@@ -188,7 +188,16 @@ Next, the program needs to recommend guesses. To do this, it must first compare 
 
 For every guess, the program sorts the grey, yellow, greens of those solutions into "groups." For instance, if only 2 solutions for the same guess produce "grey grey yellow grey grey," the program tracks that unique string of colors and stores the count "2."
 
-![image](./wordlepic21.png)
+```bash
+    # compare strings of colors, count and track number of unique strings of colors 
+    average_group_dict = {} # dictionary that will hold all guesses and average group size for each
+    for guess in all_guesses_solutions_dict: 
+        countsum = 0
+        colorcounts = {}
+
+        for solution in all_guesses_solutions_dict[guess]:
+            colorcounts[all_guesses_solutions_dict[guess][solution]] = colorcounts.get(all_guesses_solutions_dict[guess][solution], 0) + 1
+```
 
 The program now calculates the average size of those groups of unique strings of colors. The smaller the average size of groups for a guess, the faster Wordle can generally be solved with that particular guess. The most extreme example is an average group size of 1. If all groups have only one possible solution, that means your next guess guarantees solving Wordle on the following guess. 
 
