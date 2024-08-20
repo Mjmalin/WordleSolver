@@ -201,7 +201,17 @@ For every guess, the program sorts the grey, yellow, greens of those solutions i
 
 The program now calculates the average size of those groups of unique strings of colors. The smaller the average size of groups for a guess, the faster Wordle can generally be solved with that particular guess. The most extreme example is an average group size of 1. If all groups have only one possible solution, that means your next guess guarantees solving Wordle on the following guess. 
 
-![image](./wordlepic22.png)
+```bash
+        # calculate the average size of groups of unique strings of colors    
+        floatlength = float(len(colorcounts))
+
+        for all_guesses_solutions_dict[guess][solution], count in colorcounts.items():
+            countsum = countsum + float(count)
+            averagegroups = (countsum/floatlength) # average of counts, represents average size of groups
+            average_group_dict[guess] = averagegroups
+            
+        colorcounts.clear()
+```
 
 Here is the code that prints all the guesses with the smallest average group size. The program prioritizes recommending guesses that could be possible solutions, but not at the expense of recommending guesses with smallest average group size. 
 
