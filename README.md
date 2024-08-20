@@ -151,7 +151,40 @@ while True:
 
 Next, the program needs to recommend guesses. To do this, it must first compare every possible guess to every possible solution, storing the theoretical greys, yellows, and greens that each guess/solution pairing would produce. It is important to check every possible guess, since very often the best guess is not a possible solution.
 
-![image](./wordlepic20.png)
+```bash
+    # dictionary that will hold color combination results of all possible guesses tested against all possible solutions
+    all_guesses_solutions_dict = {}
+
+    # for all possible Wordle entries (potential guesses), create a dictionary
+    for guess in all_solutions_list:
+        all_guesses_solutions_dict[guess] = {}
+
+        # dictionary to keep track of the counts of each letter in the solution
+        for solution in remaining_solutions:
+            solution_counts = {}
+            for solution_letter in solution:
+                solution_counts[solution_letter] = solution_counts.get(solution_letter, 0) + 1
+
+            # lists to hold the results
+            all_guesses_solutions_dict[guess][solution] = []
+
+        # first pass: identify greens and update solution counts
+            for guess_letter, solution_letter in zip(guess, solution):
+                if guess_letter == solution_letter:
+                    all_guesses_solutions_dict[guess][solution].append('green')
+                    solution_counts[guess_letter] -= 1
+                else:
+                    all_guesses_solutions_dict[guess][solution].append(None)  # placeholder for non-green matches
+
+            # second pass: identify yellows and greys, respecting green matches
+            for i, guess_letter in enumerate(guess):
+                if all_guesses_solutions_dict[guess][solution][i] is None:  # only process if not already marked as green
+                    if guess_letter in solution_counts and solution_counts[guess_letter] > 0:
+                        all_guesses_solutions_dict[guess][solution][i] = 'yellow'
+                        solution_counts[guess_letter] -= 1
+                    else:
+                        all_guesses_solutions_dict[guess][solution][i] = 'grey'
+```
 
 For every guess, the program sorts the grey, yellow, greens of those solutions into "groups." For instance, if only 2 solutions for the same guess produce "grey grey yellow grey grey," the program tracks that unique string of colors and stores the count "2."
 
