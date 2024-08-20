@@ -96,7 +96,56 @@ remaining_solutions = [d for d in all_solutions_list if d not in past_solutions_
 
 The program uses list comprehension once again to subtract all impossible solutions based on green, yellow, and grey letters, continuing to prompt the user to enter letters until there is only one Wordle solution left. 
 
-![image](./wordlepic18.png)
+```bash
+# continue asking for Wordle entries unless there is one word left
+while True:
+    if len(remaining_solutions) < 2:
+        sys.exit()
+
+    # ask for green letters
+    while True:
+        green = input("Enter a green letter (simply press return if none/no more): ")
+        if green == "":
+            break
+        green_list.append(green)
+
+    # ask for positions, subtract words with no green letters in that position
+        gpos = input("Enter position of letter (options are 1 - 5): ")
+        gp = int(gpos)
+        green_letter_position = gp - 1
+        remaining_solutions = [j for j in remaining_solutions if j[green_letter_position] == green]
+        
+    # ask for yellow letters
+    while True:
+        yellow = input("Enter a yellow letter (simply press return if none/no more): ")
+        if yellow == "":
+            break
+        yellow_list.append(yellow)
+
+    # ask for positions, subtract words with yellow letters in that position
+        ypos = input("Enter position of letter (options are 1 - 5): ")
+        yp = int(ypos)
+        yellow_letter_position = yp - 1
+        remaining_solutions = [g for g in remaining_solutions if g[yellow_letter_position] != yellow]
+
+    # subtract words with none of the yellow letters 
+    remaining_solutions = [b for b in remaining_solutions if all(a in b for a in yellow_list)]
+    
+    # ask for grey letters, add them to grey_list 
+    while True:
+        grey = input("Enter a grey letter (simply press return if none/no more): ")
+        if grey == "":      
+            break  
+        grey_list.append(grey)
+        
+    # subtract everything in yellow_list and green_list from grey_list, to deal with guesses like "PUPPY," that might produce a yellow P and two grey P's, for instance
+    grey_list = [gg for gg in grey_list if gg not in yellow_list]
+    grey_list = [ii for ii in grey_list if ii not in green_list]
+                
+    # subtract all words with grey letters
+    remaining_solutions = [e for e in remaining_solutions if all(f not in e for f in grey_list)]
+    print("Remaining possible solutions:", remaining_solutions)
+```
 
 ### 2. Recommending Guesses
 
