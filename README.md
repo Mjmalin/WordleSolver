@@ -77,7 +77,6 @@ for lines in soup :
     y = x.split()
     for all_solutions in y :
         all_solutions_list.append(all_solutions)
-```
 
 # import all past Wordle answers, format them into lower case
 html = urllib.request.urlopen("https://www.rockpapershotgun.com/wordle-past-answers", context=ctx).read()
@@ -86,6 +85,7 @@ soup_two = BeautifulSoup(html, 'html.parser')
 words = soup_two.find_all("ul", class_="inline")
 uppercase_past_solutions_list = re.findall("<li>([A-Z]+)", str(words))
 past_solutions_list = [lowercase_past_solutions.lower() for lowercase_past_solutions in uppercase_past_solutions_list]
+```
 
 It then uses list comprehension to subtract all past solutions from all possible solutions, since Wordle never repeats solutions. 
 
