@@ -68,7 +68,24 @@ The program would solve on the next guess if you chose "light". Since the "avera
 
 The program needs to start with a list of all valid Wordle solutions. It begins by scraping a list of all possible Wordle solutions from a github repository, as well as using BeautifulSoup and regular expressions to import and parse a list of all past Wordle solutions from a website. 
 
-![image](./wordlepic15.png)
+```bash
+# import all possible Wordle solutions into a list
+html = urllib.request.urlopen("https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/45c977427419a1e0edee8fd395af1e0a4966273b/wordle-answers-alphabetical.txt", context=ctx).read()
+soup = BeautifulSoup(html, 'html.parser')
+for lines in soup :
+    x = lines.rstrip()
+    y = x.split()
+    for all_solutions in y :
+        all_solutions_list.append(all_solutions)
+```
+
+# import all past Wordle answers, format them into lower case
+html = urllib.request.urlopen("https://www.rockpapershotgun.com/wordle-past-answers", context=ctx).read()
+soup_two = BeautifulSoup(html, 'html.parser')
+
+words = soup_two.find_all("ul", class_="inline")
+uppercase_past_solutions_list = re.findall("<li>([A-Z]+)", str(words))
+past_solutions_list = [lowercase_past_solutions.lower() for lowercase_past_solutions in uppercase_past_solutions_list]
 
 It then uses list comprehension to subtract all past solutions from all possible solutions, since Wordle never repeats solutions. 
 
