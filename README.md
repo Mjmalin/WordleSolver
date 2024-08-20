@@ -215,7 +215,16 @@ The program now calculates the average size of those groups of unique strings of
 
 Here is the code that prints all the guesses with the smallest average group size. The program prioritizes recommending guesses that could be possible solutions, but not at the expense of recommending guesses with smallest average group size. 
 
-![image](./wordlepic27.png)
+```bash
+    # print the recommended guesses, in other words, the guesses that produced smallest average group size
+    min_value = min(average_group_dict.values()) # min_value represents the smallest average group size
+    best_guess_list = [ka for ka,va in average_group_dict.items() if va == min_value] # we use best_guess_list if the best guess is not a possible solution
+    solution_best_guess_list = [xa for xa in best_guess_list if xa in remaining_solutions] # we use solution_best_guess_list if the best guess is a possible solution
+    if not solution_best_guess_list:
+        print("Recommended next guess(es):", best_guess_list, "Smallest average group size: ", min_value) 
+    else:
+        print("Recommended next guess(es):", solution_best_guess_list, "Smallest average group size: ", min_value)
+```
 
 In this example, after our first guess "parse," there are only 6 remaining possible solutions.
 
