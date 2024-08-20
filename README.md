@@ -89,7 +89,10 @@ past_solutions_list = [lowercase_past_solutions.lower() for lowercase_past_solut
 
 It then uses list comprehension to subtract all past solutions from all possible solutions, since Wordle never repeats solutions. 
 
-![image](./wordlepic16.png)
+```bash
+# subtract all past Wordle answers from all possible Wordle solutions
+remaining_solutions = [d for d in all_solutions_list if d not in past_solutions_list]
+```
 
 The program uses list comprehension once again to subtract all impossible solutions based on green, yellow, and grey letters, continuing to prompt the user to enter letters until there is only one Wordle solution left. 
 
