@@ -2,7 +2,7 @@
 
 This program solves the NYT game Wordle. 
 
-![image](./images/Screen Shot 2024-07-17 at 4.38.35 PM.png)
+![image](./images/WordlePic1.png)
 *Wordle from 7/17/24*
 
 ## Installation
