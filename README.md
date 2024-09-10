@@ -1,6 +1,6 @@
 # WordleSolver
 
-This program solves the NYT game Wordle. 
+This program solves the NYT game Wordle, attempting to do so in as few guesses as possible. 
 
 ![image](./images/WordlePic1.png)
 *Wordle from 7/17/24*
@@ -87,7 +87,7 @@ uppercase_past_solutions_list = re.findall("<li>([A-Z]+)", str(words))
 past_solutions_list = [lowercase_past_solutions.lower() for lowercase_past_solutions in uppercase_past_solutions_list]
 ```
 
-It then uses list comprehension to subtract all past solutions from all possible solutions, since Wordle never repeats solutions. 
+It then uses list comprehension to subtract all past solutions from all possible solutions, since Wordle doesn't repeat solutions. While this program was inspired by the NYT WordleBot which accomplishes the same task of attempting to solve Wordle in as few guesses as possible, this is an improvement on the NYT version.
 
 ```bash
 # subtract all past Wordle answers from all possible Wordle solutions
