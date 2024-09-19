@@ -1,10 +1,10 @@
 import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 import ssl
-import re
 import sys
 
-all_solutions_list = list()
+remaining_solutions = list()
+allowed_guesses_list = list()
 grey_list = list()
 yellow_list = list()
 green_list = list()
@@ -14,25 +14,29 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-# import all possible Wordle solutions into a list
+# import most common 5-letter words into a list
+html = urllib.request.urlopen("https://gist.githubusercontent.com/shmookey/b28e342e1b1756c4700f42f17102c2ff/raw/ed4c33a168027aa1e448c579c8383fe20a3a6225/WORDS", context=ctx).read()
+soup = BeautifulSoup(html, 'html.parser')
+for lines in soup :
+    x = lines.rstrip()
+    y = x.split()
+    for allowed_guesses in y :
+        allowed_guesses_list.append(allowed_guesses)
+
+# import all possible Wordle solutions into a list (this list has since been updated)
 html = urllib.request.urlopen("https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/45c977427419a1e0edee8fd395af1e0a4966273b/wordle-answers-alphabetical.txt", context=ctx).read()
 soup = BeautifulSoup(html, 'html.parser')
 for lines in soup :
     x = lines.rstrip()
     y = x.split()
     for all_solutions in y :
-        all_solutions_list.append(all_solutions)
+        remaining_solutions.append(all_solutions)
 
-# import all past Wordle answers, format them into lower case
-html = urllib.request.urlopen("https://www.rockpapershotgun.com/wordle-past-answers", context=ctx).read()
-soup_two = BeautifulSoup(html, 'html.parser')
-
-words = soup_two.find_all("ul", class_="inline")
-uppercase_past_solutions_list = re.findall("<li>([A-Z]+)", str(words))
-past_solutions_list = [lowercase_past_solutions.lower() for lowercase_past_solutions in uppercase_past_solutions_list]
-
-# subtract all past Wordle answers from all possible Wordle solutions
-remaining_solutions = [d for d in all_solutions_list if d not in past_solutions_list]
+# add known NYT extra additions to possible solutions
+nyt_additions = 'beaut', 'snafu', 'laser', 'guana'
+for nyt_words in nyt_additions:
+    remaining_solutions.append(nyt_words)
+remaining_solutions.sort()
 
 # continue asking for Wordle entries unless there is one word left
 while True:
@@ -87,7 +91,7 @@ while True:
     all_guesses_solutions_dict = {}
 
     # for all possible Wordle entries (potential guesses), create a dictionary
-    for guess in all_solutions_list:
+    for guess in allowed_guesses_list:
         all_guesses_solutions_dict[guess] = {}
 
         # dictionary to keep track of the counts of each letter in the solution
