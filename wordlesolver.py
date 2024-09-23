@@ -33,7 +33,7 @@ for lines in soup :
         remaining_solutions.append(all_solutions)
 
 # add known NYT extra additions to possible solutions
-nyt_additions = 'beaut', 'snafu', 'laser', 'guana'
+nyt_additions = 'beaut', 'snafu', 'laser', 'guano'
 for nyt_words in nyt_additions:
     remaining_solutions.append(nyt_words)
 remaining_solutions.sort()
